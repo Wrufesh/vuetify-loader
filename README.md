@@ -8,7 +8,8 @@
 
 ## Automatic Imports
 `vuetify-loader` will automatically import all Vuetify components as you use them
-
+It will also auto import `iconName` in node prop value `$getIcon('iconName')` 
+and place it into $options.icons Object
 ```js
 // webpack.config.js
 
@@ -43,6 +44,10 @@ exports.plugins.push(
         return [camelTag, `import ${camelTag} from '@/components/core/${camelTag.substring(4)}.vue'`]
       }
     }
+
+    iconsMatch(_, { camelIcon: icon }) {
+          return [icon, `import { ${icon} } from '@mdi/js';`];
+    }
   })
 )
 ```
@@ -58,6 +63,9 @@ module.exports = {
         if (kebabTag.startsWith('core-')) {
           return [camelTag, `import ${camelTag} from '@/components/core/${camelTag.substring(4)}.vue'`]
         }
+      }
+      iconsMatch(_, { camelIcon: icon }) {
+          return [icon, `import { ${icon} } from '@mdi/js';`];
       }
     }])
   }
