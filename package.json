@@ -1,11 +1,11 @@
 {
-  "name": "vuetify-loader-patched",
-  "version": "1.4.3",
+  "name": "vuetify-loader",
+  "version": "1.4.3-wrufesh",
   "description": "A Webpack plugin for treeshaking Vuetify components and more",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuetifyjs/vuetify-loader.git"
+    "url": "git+https://github.com/Wrufesh/vuetify-loader.git#svgIcon"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
